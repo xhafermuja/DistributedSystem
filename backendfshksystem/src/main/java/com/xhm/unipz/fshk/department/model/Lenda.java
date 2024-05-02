@@ -1,6 +1,9 @@
 package com.xhm.unipz.fshk.department.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Lenda {
@@ -12,11 +15,19 @@ public class Lenda {
     private String lendaOraMbajtjes;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "professor_id",referencedColumnName = "professorId")
+    @JsonBackReference
     private Professor ligjeruesi;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="semester_id", referencedColumnName = "semesterId")
+    @JsonBackReference
     private Semester semester;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="department_id", referencedColumnName = "departmentId")
+    @JsonBackReference
+    private Department department;
+
 
     public int getLendaId() {
         return lendaId;
@@ -64,5 +75,13 @@ public class Lenda {
 
     public void setSemester(Semester semester) {
         this.semester = semester;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }

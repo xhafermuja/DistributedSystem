@@ -1,8 +1,11 @@
 package com.xhm.unipz.fshk.department.service;
 
+import com.xhm.unipz.fshk.department.dto.LendaProfessorDTO;
+import com.xhm.unipz.fshk.department.model.Department;
 import com.xhm.unipz.fshk.department.model.Lenda;
 import com.xhm.unipz.fshk.department.model.Professor;
 import com.xhm.unipz.fshk.department.model.Semester;
+import com.xhm.unipz.fshk.department.repository.DepartmentRepository;
 import com.xhm.unipz.fshk.department.repository.LendaRepository;
 import com.xhm.unipz.fshk.department.repository.ProfessorRepository;
 import com.xhm.unipz.fshk.department.repository.SemesterRepository;
@@ -20,12 +23,19 @@ public class LendaServiceImpl implements LendaService{
     private ProfessorRepository professorRepository;
     @Autowired
     private SemesterRepository semesterRepository;
+    @Autowired
+    private DepartmentRepository departmentRepository;
 
     @Override
     public Lenda saveLenda(Lenda lenda) {return lendaRepository.save(lenda);}
 
     @Override
     public List<Lenda> getAllLenda() {return lendaRepository.findAll();}
+
+    @Override
+    public List<LendaProfessorDTO> getLendaWithProfessor() {
+        return lendaRepository.getLendaWithProfessor();
+    }
 
     @Override
     public Lenda updateLenda(Integer id, Lenda lenda) {
@@ -59,6 +69,18 @@ public class LendaServiceImpl implements LendaService{
                 .orElseThrow(()->new ExpressionException("Lenda not exist with this id: "+ semesterId));
 
         lenda.setSemester(semester);
+        return lendaRepository.save(lenda);
+    }
+
+    @Override
+    public Lenda assignDepartment(Integer lendaId, Integer departmentId){
+        Lenda lenda= lendaRepository.findById(lendaId)
+                .orElseThrow(()->new ExpressionException("Lenda not exist with this id: "+ lendaId));
+        Department department= departmentRepository.findById(departmentId)
+                .orElseThrow(()->new ExpressionException("Lenda not exist with this id: "+ departmentId));
+
+        lenda.setDepartment(department);
+
         return lendaRepository.save(lenda);
     }
 

@@ -1,5 +1,6 @@
 package com.xhm.unipz.fshk.department.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -12,10 +13,10 @@ public class Semester {
     private int semesterId;
 
     private String semesterTitulli;
-    @JsonIgnore
+
+
     @OneToMany(mappedBy = "semester")
     private List<Lenda> lendet;
-
 
     public int getSemesterId() {
         return semesterId;
@@ -40,6 +41,7 @@ public class Semester {
     public void setLendet(List<Lenda> lendet) {
         this.lendet = lendet;
     }
+
 
 
 }

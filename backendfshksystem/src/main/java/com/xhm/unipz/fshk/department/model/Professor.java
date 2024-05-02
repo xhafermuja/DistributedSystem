@@ -16,9 +16,16 @@ public class Professor {
     private String professorEmail;
     private String professorOrariKonsultime;
 
-    @JsonIgnore
     @OneToMany(mappedBy="ligjeruesi")
     private List<Lenda> lendetLigj;
+
+    @ManyToMany()
+    @JoinTable(
+            name = "stafi",
+            joinColumns = @JoinColumn(name = "department_id"),
+            inverseJoinColumns = @JoinColumn(name="professor_id")
+    )
+    private List<Department> departmentList;
 
     public int getProfessorId() {
         return professorId;
@@ -76,4 +83,11 @@ public class Professor {
         this.lendetLigj = lendetLigj;
     }
 
+    public List<Department> getDepartmentList() {
+        return departmentList;
+    }
+
+    public void setDepartment(Department departmentList) {
+        this.departmentList.add(departmentList);
+    }
 }

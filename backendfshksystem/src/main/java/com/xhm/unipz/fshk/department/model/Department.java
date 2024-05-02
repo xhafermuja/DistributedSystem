@@ -12,12 +12,10 @@ public class Department {
     private String departmentEmri;
     private String departmentPershkrimi;
 
-    @ManyToMany(mappedBy = "department")
+    @ManyToMany(mappedBy = "departmentList")
     private List<Professor> professorList;
     @OneToMany(mappedBy = "department")
     private List<Lenda> lendaList;
-    @OneToMany(mappedBy = "department")
-    private List<Semester>semesterList;
 
     public int getDepartmentId() {
         return departmentId;
@@ -43,4 +41,19 @@ public class Department {
         this.departmentPershkrimi = departmentPershkrimi;
     }
 
+    public List<Professor> getProfessorList() {
+        return professorList;
+    }
+
+    public void setProfessorList(List<Professor> professorList) {
+        this.professorList = professorList;
+    }
+
+    public List<Lenda> getLendaList() {
+        return lendaList;
+    }
+
+    public void setLendaList(List<Lenda> lendaList) {
+        this.lendaList = lendaList;
+    }
 }

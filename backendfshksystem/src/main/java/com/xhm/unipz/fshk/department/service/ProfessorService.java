@@ -10,5 +10,6 @@ public interface ProfessorService {
     public List<Professor> getAllProfessor();
     public Professor getProfessorById(Integer professorId);
     public Professor updateProfessor(Integer id, Professor professor);
+    public Professor assignDepartment(Integer professorId, Integer departmentId);
     public void deleteProfessor(Integer id);
 }

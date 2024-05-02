@@ -1,6 +1,8 @@
 package com.xhm.unipz.fshk.department.service;
 
+import com.xhm.unipz.fshk.department.model.Department;
 import com.xhm.unipz.fshk.department.model.Professor;
+import com.xhm.unipz.fshk.department.repository.DepartmentRepository;
 import com.xhm.unipz.fshk.department.repository.ProfessorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.expression.ExpressionException;
@@ -12,7 +14,9 @@ import java.util.List;
 public class ProfessorServiceImpl implements ProfessorService {
 
     @Autowired
-    ProfessorRepository professorRepository;
+    private ProfessorRepository professorRepository;
+    @Autowired
+    private DepartmentRepository departmentRepository;
 
     @Override
     public Professor saveProfessor(Professor professor) {
@@ -42,6 +46,18 @@ public class ProfessorServiceImpl implements ProfessorService {
         updateProfessor.setLendetLigj(professor.getLendetLigj());
 
         return professorRepository.save(updateProfessor);
+    }
+
+    @Override
+    public Professor assignDepartment(Integer professorId, Integer departmentId) {
+        Professor professor= professorRepository.findById(professorId)
+                .orElseThrow(()-> new ExpressionException("Professor do not exist with this id: "+professorId));
+        Department department= departmentRepository.findById(departmentId)
+                .orElseThrow(()-> new ExpressionException("Department do not exist with this id: "+departmentId));
+
+        professor.setDepartment(department);
+
+        return professorRepository.save(professor);
     }
 
     @Override

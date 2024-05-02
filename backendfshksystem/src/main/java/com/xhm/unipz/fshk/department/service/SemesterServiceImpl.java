@@ -1,6 +1,8 @@
 package com.xhm.unipz.fshk.department.service;
 
+import com.xhm.unipz.fshk.department.model.Department;
 import com.xhm.unipz.fshk.department.model.Semester;
+import com.xhm.unipz.fshk.department.repository.DepartmentRepository;
 import com.xhm.unipz.fshk.department.repository.SemesterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.expression.ExpressionException;
@@ -12,8 +14,6 @@ import java.util.List;
 public class SemesterServiceImpl implements SemesterService{
     @Autowired
     private SemesterRepository semesterRepository;
-
-
     @Override
     public Semester saveSemester(Semester semester) {return semesterRepository.save(semester);}
 
@@ -30,6 +30,7 @@ public class SemesterServiceImpl implements SemesterService{
 
         return semesterRepository.save(updateSemester);
     }
+
     @Override
     public void deleteSemester(Integer id) {
         Semester updateSemester= semesterRepository.findById(id)

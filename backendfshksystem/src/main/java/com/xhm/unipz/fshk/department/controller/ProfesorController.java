@@ -27,6 +27,9 @@ public class ProfesorController {
     @PutMapping("/{professorId}")
     private Professor updateProfessor(@PathVariable("professorId") Integer professorId, @RequestBody Professor professor){return professorService.updateProfessor(professorId,professor);}
 
+    @PutMapping("/{professorId}/department/{departmentId}")
+    private Professor assignDepartment(@PathVariable Integer professorId, @PathVariable Integer departmentId){return professorService.assignDepartment(professorId,departmentId);}
+
     @DeleteMapping("/{professorId}")
     private ResponseEntity<String > deleteProfessor(@PathVariable("professorId") Integer professorId){
         professorService.deleteProfessor(professorId);
