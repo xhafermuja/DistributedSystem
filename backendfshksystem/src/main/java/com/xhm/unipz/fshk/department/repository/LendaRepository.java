@@ -12,7 +12,27 @@ import java.util.List;
 public interface LendaRepository extends JpaRepository<Lenda, Integer> {
 
     @Query("SELECT new com.xhm.unipz.fshk.department.dto.LendaProfessorDTO(l.lendaId, l.lendaTitulli, l.lendaKredi, l.lendaOraMbajtjes, " +
-            "p.professorId, p.professorEmri, p.professorNrZyre, p.professorKati, p.professorEmail, p.professorOrariKonsultime) " +
-            "FROM Lenda l JOIN l.ligjeruesi p")
-    List<LendaProfessorDTO> getLendaWithProfessor();
+            "p.professorId, p.professorEmri, p.professorNrZyre, p.professorKati, p.professorEmail, p.professorOrariKonsultime, " +
+            "s.semesterId, d.departmentId) " +
+            "FROM Lenda l " +
+            "JOIN l.ligjeruesi p " +
+            "JOIN l.semester s " +
+            "JOIN l.department d " +
+            "WHERE d.departmentId = 1 " +
+            "ORDER BY s.semesterId ASC")
+    List<LendaProfessorDTO> findAllLendaSD();
+
+    @Query("SELECT new com.xhm.unipz.fshk.department.dto.LendaProfessorDTO(l.lendaId, l.lendaTitulli, l.lendaKredi, l.lendaOraMbajtjes, " +
+            "p.professorId, p.professorEmri, p.professorNrZyre, p.professorKati, p.professorEmail, p.professorOrariKonsultime, " +
+            "s.semesterId, d.departmentId) " +
+            "FROM Lenda l " +
+            "JOIN l.ligjeruesi p " +
+            "JOIN l.semester s " +
+            "JOIN l.department d " +
+            "WHERE d.departmentId = 2 " +
+            "ORDER BY s.semesterId ASC")
+    List<LendaProfessorDTO> findAllLendaTIT();
+
+
+
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/baseline_menu_24"
+        app:showAsAction="always"
+        android:title="Menu">
+
+        <menu>
+            <item
+                android:id="@+id/panelDepartamentet"
+                android:title="Panel Departamentet"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/panelLendet"
+                android:title="Panel Lendet"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/panelStafi"
+                android:title="Panel Stafi"
+                app:showAsAction="never" />
+
+
+        </menu>
+    </item>
+
+</menu>

@@ -1,6 +1,7 @@
 package com.xhm.unipz.fshk.department.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class Professor {
     private String professorOrariKonsultime;
 
     @OneToMany(mappedBy="ligjeruesi")
+    @JsonManagedReference("professor-lenda")
     private List<Lenda> lendetLigj;
 
     @ManyToMany()
@@ -25,7 +27,11 @@ public class Professor {
             joinColumns = @JoinColumn(name = "department_id"),
             inverseJoinColumns = @JoinColumn(name="professor_id")
     )
+    @JsonIgnore
     private List<Department> departmentList;
+
+    public Professor() {
+    }
 
     public int getProfessorId() {
         return professorId;

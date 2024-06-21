@@ -1,5 +1,9 @@
 package com.xhm.unipz.fshk.department.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -13,9 +17,19 @@ public class Department {
     private String departmentPershkrimi;
 
     @ManyToMany(mappedBy = "departmentList")
+    @JsonIgnore
     private List<Professor> professorList;
     @OneToMany(mappedBy = "department")
+    @JsonManagedReference("department-lenda")
     private List<Lenda> lendaList;
+
+    public Department() {
+    }
+
+    public Department(String departmentEmri, String departmentPershkrimi) {
+        this.departmentEmri = departmentEmri;
+        this.departmentPershkrimi = departmentPershkrimi;
+    }
 
     public int getDepartmentId() {
         return departmentId;

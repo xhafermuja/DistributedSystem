@@ -1,8 +1,6 @@
 package com.xhm.unipz.fshk.department.service;
 
-import com.xhm.unipz.fshk.department.model.Department;
 import com.xhm.unipz.fshk.department.model.Semester;
-import com.xhm.unipz.fshk.department.repository.DepartmentRepository;
 import com.xhm.unipz.fshk.department.repository.SemesterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.expression.ExpressionException;

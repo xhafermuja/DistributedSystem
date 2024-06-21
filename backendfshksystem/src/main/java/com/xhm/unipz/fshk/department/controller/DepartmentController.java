@@ -23,7 +23,7 @@ public class DepartmentController {
     public List<Department> getAllDepartments(){return departmentService.getAllDepartments();}
 
     @PostMapping("/save")
-    public Department saveDepartment(@RequestBody Department department){return departmentService.saveDepartment(department);};
+    public Department saveDepartment(@RequestBody Department department){return departmentService.saveDepartment(department);}
 
     @PutMapping("/{departmentId}")
     public Department updateDepartment(@PathVariable("departmentId") Integer departmentId, @RequestBody Department department){return departmentService.updateDepartment(departmentId,department);}

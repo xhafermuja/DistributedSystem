@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface ProfessorService {
 
-    public Professor saveProfessor(Professor professor);
-    public List<Professor> getAllProfessor();
-    public Professor getProfessorById(Integer professorId);
-    public Professor updateProfessor(Integer id, Professor professor);
-    public Professor assignDepartment(Integer professorId, Integer departmentId);
-    public void deleteProfessor(Integer id);
+    Professor saveProfessor(Professor professor);
+    List<Professor> getAllProfessor();
+    Professor getProfessorById(Integer professorId);
+    Professor updateProfessor(Integer id, Professor professor);
+    Professor assignDepartment(Integer professorId, Integer departmentId);
+    void deleteProfessor(Integer id);
 }

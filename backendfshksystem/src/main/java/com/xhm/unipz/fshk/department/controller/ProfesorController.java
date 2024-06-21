@@ -18,6 +18,9 @@ public class ProfesorController {
     @GetMapping("/getAll")
     private List<Professor> getAllProfessor(){return professorService.getAllProfessor();}
 
+//    @GetMapping("/getAllStafi")
+//    private List<StafiDTO> getAllProfessorDTO(){return professorService.getAllProfessorDTO();}
+
     @GetMapping("/{professorId}")
     private Professor getProfessorById(@PathVariable Integer professorId){return professorService.getProfessorById(professorId);}
 
@@ -31,9 +34,8 @@ public class ProfesorController {
     private Professor assignDepartment(@PathVariable Integer professorId, @PathVariable Integer departmentId){return professorService.assignDepartment(professorId,departmentId);}
 
     @DeleteMapping("/{professorId}")
-    private ResponseEntity<String > deleteProfessor(@PathVariable("professorId") Integer professorId){
+    private ResponseEntity<String> deleteProfessor(@PathVariable("professorId") Integer professorId){
         professorService.deleteProfessor(professorId);
-
         return  ResponseEntity.ok("Professor deleted successfully!.");
     }
 }

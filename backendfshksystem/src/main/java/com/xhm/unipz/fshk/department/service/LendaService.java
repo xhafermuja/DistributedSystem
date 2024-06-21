@@ -6,12 +6,13 @@ import com.xhm.unipz.fshk.department.model.Lenda;
 import java.util.List;
 
 public interface LendaService {
-    public Lenda saveLenda(Lenda lenda);
-    public List<Lenda> getAllLenda();
-    public List<LendaProfessorDTO> getLendaWithProfessor();
-    public Lenda updateLenda(Integer id, Lenda lenda);
-    public Lenda assignProfessor(Integer lendaId, Integer professorId);
-    public Lenda assignSemester(Integer lendaId, Integer semesterId);
-    public Lenda assignDepartment(Integer lendaId, Integer departmentId);
-    public void deleteLenda(Integer id);
+    Lenda saveLenda(Lenda lenda);
+    List<Lenda> getAllLenda();
+    List<LendaProfessorDTO> getAllLendaSD();
+    List<LendaProfessorDTO> getAllLendaTIT();
+    Lenda updateLenda(Integer id, Lenda lenda);
+    Lenda assignProfessor(Integer lendaId, Integer professorId);
+    Lenda assignSemester(Integer lendaId, Integer semesterId);
+    Lenda assignDepartment(Integer lendaId, Integer departmentId);
+    void deleteLenda(Integer id);
 }

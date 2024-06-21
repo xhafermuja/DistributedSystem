@@ -9,6 +9,7 @@ import com.xhm.unipz.fshk.department.repository.DepartmentRepository;
 import com.xhm.unipz.fshk.department.repository.LendaRepository;
 import com.xhm.unipz.fshk.department.repository.ProfessorRepository;
 import com.xhm.unipz.fshk.department.repository.SemesterRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.expression.ExpressionException;
 import org.springframework.stereotype.Service;
@@ -27,17 +28,25 @@ public class LendaServiceImpl implements LendaService{
     private DepartmentRepository departmentRepository;
 
     @Override
+    @Transactional
     public Lenda saveLenda(Lenda lenda) {return lendaRepository.save(lenda);}
 
     @Override
     public List<Lenda> getAllLenda() {return lendaRepository.findAll();}
 
     @Override
-    public List<LendaProfessorDTO> getLendaWithProfessor() {
-        return lendaRepository.getLendaWithProfessor();
+    public List<LendaProfessorDTO> getAllLendaSD() {
+        return lendaRepository.findAllLendaSD();
     }
 
     @Override
+    public List<LendaProfessorDTO> getAllLendaTIT() {
+        return lendaRepository.findAllLendaTIT();
+    }
+
+
+    @Override
+    @Transactional
     public Lenda updateLenda(Integer id, Lenda lenda) {
         Lenda updateLenda= lendaRepository.findById(id)
                 .orElseThrow(()-> new ExpressionException("Lenda not exist with this id: "+ id));
@@ -51,6 +60,7 @@ public class LendaServiceImpl implements LendaService{
     }
 
     @Override
+    @Transactional
     public Lenda assignProfessor(Integer lendaId, Integer professorId) {
         Lenda lenda= lendaRepository.findById(lendaId)
                 .orElseThrow(()->new ExpressionException("Lenda not exist with this id: "+ lendaId));
@@ -62,6 +72,7 @@ public class LendaServiceImpl implements LendaService{
     }
 
     @Override
+    @Transactional
     public Lenda assignSemester(Integer lendaId, Integer semesterId){
         Lenda lenda= lendaRepository.findById(lendaId)
                 .orElseThrow(()->new ExpressionException("Lenda not exist with this id: "+ lendaId));
@@ -73,6 +84,7 @@ public class LendaServiceImpl implements LendaService{
     }
 
     @Override
+    @Transactional
     public Lenda assignDepartment(Integer lendaId, Integer departmentId){
         Lenda lenda= lendaRepository.findById(lendaId)
                 .orElseThrow(()->new ExpressionException("Lenda not exist with this id: "+ lendaId));
@@ -85,6 +97,7 @@ public class LendaServiceImpl implements LendaService{
     }
 
     @Override
+    @Transactional
     public void deleteLenda(Integer id) {
         Lenda deleteLenda= lendaRepository.findById(id)
                 .orElseThrow(()-> new ExpressionException("Department not exist with id: "+ id));

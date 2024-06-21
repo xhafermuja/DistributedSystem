@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@drawable/baseline_menu_24"
+        app:showAsAction="always"
+        android:title="Menu">
+
+        <menu>
+            <item
+                android:id="@+id/departamentet"
+                android:title="Departamentet"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/lendet"
+                android:title="Lendet"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/evente"
+                android:title="Evente"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/kontakt"
+                android:title="Kontakt"
+                app:showAsAction="never" />
+
+
+        </menu>
+    </item>
+
+</menu>

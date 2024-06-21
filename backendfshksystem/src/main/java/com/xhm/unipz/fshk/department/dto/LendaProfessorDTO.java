@@ -11,8 +11,13 @@ public class LendaProfessorDTO {
     private int professorKati;
     private String professorEmail;
     private String professorOrariKonsultime;
+    private int semesterId;
+    private int departmentId;
 
-    public LendaProfessorDTO(int lendaId, String lendaTitulli, int lendaKredi, String lendaOraMbajtjes, int professorId, String professorEmri, int professorNrZyre, int professorKati, String professorEmail, String professorOrariKonsultime) {
+    public LendaProfessorDTO(int lendaId, String lendaTitulli, int lendaKredi,
+                             String lendaOraMbajtjes, int professorId, String professorEmri,
+                             int professorNrZyre, int professorKati, String professorEmail,
+                             String professorOrariKonsultime, int semesterId, int departmentId) {
         this.lendaId = lendaId;
         this.lendaTitulli = lendaTitulli;
         this.lendaKredi = lendaKredi;
@@ -23,7 +28,10 @@ public class LendaProfessorDTO {
         this.professorKati = professorKati;
         this.professorEmail = professorEmail;
         this.professorOrariKonsultime = professorOrariKonsultime;
+        this.semesterId = semesterId;
+        this.departmentId = departmentId;
     }
+
 
     public int getLendaId() {
         return lendaId;
@@ -103,5 +111,21 @@ public class LendaProfessorDTO {
 
     public void setProfessorOrariKonsultime(String professorOrariKonsultime) {
         this.professorOrariKonsultime = professorOrariKonsultime;
+    }
+
+    public int getSemesterId() {
+        return semesterId;
+    }
+
+    public void setSemesterId(int semesterId) {
+        this.semesterId = semesterId;
+    }
+
+    public int getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
     }
 }

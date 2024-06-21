@@ -2,7 +2,6 @@ package com.xhm.unipz.fshk.department.controller;
 
 import com.xhm.unipz.fshk.department.dto.LendaProfessorDTO;
 import com.xhm.unipz.fshk.department.model.Lenda;
-import com.xhm.unipz.fshk.department.model.Professor;
 import com.xhm.unipz.fshk.department.service.LendaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +20,11 @@ public class LendaController {
     @GetMapping("/getAll")
     public List<Lenda> getAllLenda(){return lendaService.getAllLenda();}
 
-    @GetMapping("/getAllLendaWithProfessor")
-    public List<LendaProfessorDTO> getAllLendaWithProfessor(){return lendaService.getLendaWithProfessor();}
+    @GetMapping("/getAllLendaSD")
+    public List<LendaProfessorDTO> getAllLendaSD(){return lendaService.getAllLendaSD();}
+
+    @GetMapping("/getAllLendaTIT")
+    public List<LendaProfessorDTO> getAllLendaTIT(){return lendaService.getAllLendaTIT();}
 
     @PostMapping("/save")
     public Lenda saveLenda(@RequestBody Lenda lenda){return lendaService.saveLenda(lenda);}
