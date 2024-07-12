@@ -1,5 +1,6 @@
 package com.xhm.unipz.fshk.department.controller;
 
+import com.xhm.unipz.fshk.department.dto.DepartmentDTO;
 import com.xhm.unipz.fshk.department.model.Department;
 import com.xhm.unipz.fshk.department.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,17 +11,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/department")
-@CrossOrigin
+@CrossOrigin()
 public class DepartmentController {
 
     @Autowired
     private DepartmentService departmentService;
 
-    @GetMapping
-    public String hello(){return "Hello from rest services";}
-
-    @GetMapping("/getAll")
+    @GetMapping("/api/v1/getAll")
     public List<Department> getAllDepartments(){return departmentService.getAllDepartments();}
+
+    @GetMapping("/api/v2/getAll")
+    public  List<DepartmentDTO> getAllDepartmentsDTO(){return departmentService.findAllDepartmentsDTO();}
 
     @PostMapping("/save")
     public Department saveDepartment(@RequestBody Department department){return departmentService.saveDepartment(department);}

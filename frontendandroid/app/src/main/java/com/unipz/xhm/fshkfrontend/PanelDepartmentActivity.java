@@ -10,11 +10,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.unipz.xhm.fshkfrontend.model.Department;
 import com.unipz.xhm.fshkfrontend.model.Lenda;
 import com.unipz.xhm.fshkfrontend.model.Professor;
 import com.unipz.xhm.fshkfrontend.retrofit.DepartmentAPI;

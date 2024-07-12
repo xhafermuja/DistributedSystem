@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,7 +12,6 @@ import com.unipz.xhm.fshkfrontend.R;
 import com.unipz.xhm.fshkfrontend.model.Lenda;
 import com.unipz.xhm.fshkfrontend.model.Professor;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 

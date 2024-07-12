@@ -23,7 +23,5 @@ public class ProfessorHolder extends RecyclerView.ViewHolder {
         orariKonsProf= itemView.findViewById(R.id.stafi_list_orariKonsProf);
         lendetProfPermbajtja= itemView.findViewById(R.id.stafi_list_lendetPermb);
         photoProf= itemView.findViewById(R.id.stafi_list_photoProf);
-//
-//        photoProf.setImageResource(R.drawable.unipz);
     }
 }

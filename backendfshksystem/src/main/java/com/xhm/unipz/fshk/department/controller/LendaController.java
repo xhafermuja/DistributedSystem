@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/lenda")
-@CrossOrigin
+@CrossOrigin()
 public class LendaController {
 
     @Autowired
@@ -48,8 +48,8 @@ public class LendaController {
     }
 
     @DeleteMapping("/{lendaId}")
-    public ResponseEntity<String> deleteLenda(@PathVariable("lendaId") Integer departmentId){
-        lendaService.deleteLenda(departmentId);
+    public ResponseEntity<String> deleteLenda(@PathVariable("lendaId") Integer lendaId){
+        lendaService.deleteLenda(lendaId);
         return ResponseEntity.ok("Lenda deleted successfully!.");
     }
 

@@ -1,5 +1,6 @@
 package com.xhm.unipz.fshk.department.service;
 
+import com.xhm.unipz.fshk.department.dto.DepartmentDTO;
 import com.xhm.unipz.fshk.department.model.Department;
 import com.xhm.unipz.fshk.department.repository.DepartmentRepository;
 import jakarta.transaction.Transactional;
@@ -22,6 +23,8 @@ public class DepartmentServiceImpl implements DepartmentService{
     @Override
     public List<Department> getAllDepartments() {return departmentRepository.findAll();}
 
+
+
     @Override
     @Transactional
     public Department updateDepartment(Integer id, Department department) {
@@ -39,5 +42,10 @@ public class DepartmentServiceImpl implements DepartmentService{
         Department deleteDepartment = departmentRepository.findById(id)
                 .orElseThrow(() -> new ExpressionException("Department not exist with id: "+ id));
         departmentRepository.deleteById(id);
+    }
+
+    @Override
+    public List<DepartmentDTO> findAllDepartmentsDTO() {
+        return departmentRepository.findAllDepartmentsDTO();
     }
 }

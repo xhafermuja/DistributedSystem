@@ -15,6 +15,7 @@ import org.springframework.expression.ExpressionException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LendaServiceImpl implements LendaService{
@@ -99,9 +100,18 @@ public class LendaServiceImpl implements LendaService{
     @Override
     @Transactional
     public void deleteLenda(Integer id) {
-        Lenda deleteLenda= lendaRepository.findById(id)
-                .orElseThrow(()-> new ExpressionException("Department not exist with id: "+ id));
+        Optional<Lenda> lendaOptional= lendaRepository.findById(id);
 
-        lendaRepository.deleteById(id);
+        if(lendaOptional.isPresent()){
+            Lenda deleteLenda= lendaOptional.get();
+
+            deleteLenda.setLigjeruesi(null);
+            deleteLenda.setSemester(null);
+            deleteLenda.setDepartment(null);
+
+            lendaRepository.save(deleteLenda);
+            lendaRepository.deleteById(id);
+        }
+
     }
 }

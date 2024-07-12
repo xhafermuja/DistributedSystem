@@ -1,13 +1,6 @@
 package com.unipz.xhm.fshkfrontend.model;
 
 
-import com.unipz.xhm.fshkfrontend.model.Department;
-import com.unipz.xhm.fshkfrontend.model.Professor;
-import com.unipz.xhm.fshkfrontend.model.Semester;
-
-import java.util.List;
-
-
 public class Lenda {
 
     private int lendaId;

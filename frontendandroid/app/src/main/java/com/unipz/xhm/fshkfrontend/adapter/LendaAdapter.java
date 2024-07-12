@@ -7,10 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.unipz.xhm.fshkfrontend.R;
 import com.unipz.xhm.fshkfrontend.model.Lenda;
-import com.unipz.xhm.fshkfrontend.model.Professor;
 
 import java.util.List;
 
