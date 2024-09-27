@@ -13,7 +13,7 @@ import retrofit2.http.Path;
 
 public interface DepartmentAPI {
 
-    @GET("/department/getAll")
+    @GET("/department/api/v1/getAll")
     Call<List<Department>> getAllDepartments();
 
     @PUT("/lenda/{lendaId}/professor/{professorId}")

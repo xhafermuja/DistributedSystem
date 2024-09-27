@@ -1,1 +1,99 @@
-<p>lendet-page works!</p>
+<section class="p-20">
+    <h1 class="text-5xl text-center mb-12">Lendet</h1>
+
+    <h1 class="text-4xl text-center my-8">Dizajnimi i Softuereve- Lendet</h1>
+    <div class="flex flex-col">
+        <div class=" overflow-x-auto">
+            <div class="min-w-full inline-block align-middle">
+                <div class="overflow-hidden border rounded-lg border-gray-300">
+                    <table class=" min-w-full  rounded-xl">
+                        <thead>
+                            <tr class="bg-gray-50">
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">ID </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Titulli </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Kredi </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Ora e Mbajtjes </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Professor ID </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Professor Emri </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Nr Zyre </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Kati </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Email </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Orari i Konsultimeve </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Semester</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-300 ">
+                            @for (lenda of lendetSD; track lenda.lendaId) {
+                            <tr>
+                            
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">19-03B06S-1O0{{lenda?.lendaId}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.lendaTitulli}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.lendaKredi}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.lendaOraMbajtjes}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.professorId}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.professorEmri}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.professorNrZyre}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.professorKati}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.professorEmail}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.professorOrariKonsultime}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.semesterId}}</td>
+                              
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="text-4xl text-center my-8">Teknologjia e Informacionit dhe Telekomunikimit</h1>
+    <div class="flex flex-col">
+        <div class=" overflow-x-auto">
+            <div class="min-w-full inline-block align-middle">
+                <div class="overflow-hidden border rounded-lg border-gray-300">
+                    <table class=" min-w-full  rounded-xl">
+                        <thead>
+                            <tr class="bg-gray-50">
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">ID </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Titulli </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Kredi </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Ora e Mbajtjes </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Professor ID </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Professor Emri </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Nr Zyre </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Kati </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Email </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Orari i Konsultimeve </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize">Semester</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-300 ">
+                            @for (lenda of lendetTIT; track lenda.lendaId) {
+                            <tr>
+                            
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">19-03B06S-1O0{{lenda?.lendaId}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.lendaTitulli}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.lendaKredi}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.lendaOraMbajtjes}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.professorId}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.professorEmri}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.professorNrZyre}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.professorKati}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.professorEmail}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.professorOrariKonsultime}}</td>
+                                  <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{{lenda?.semesterId}}</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      
+  
+  
+  </section>
+  

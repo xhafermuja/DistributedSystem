@@ -1,9 +1,14 @@
-<div></div>
-<div >
+<section class="p-20">
+  <h1 class="text-5xl text-center mb-8">Fakulteti i Shkenca Kompjuterike</h1>
+  <h1 class="text-4xl text-center mb-8">Drejtimet</h1>
+  <div class="flex flex-row ">
     @for (department of departments; track department.id) {
-      <span>
-        <span>{{department?.name}}</span>
+      <span class="flex flex-col [&>*]:m-4 mx-12 text-center">
+        <span class="font-bold">{{department?.name}}</span>
         <span>{{department?.description}}</span>
       </span>
     }
-  </div>  
+  </div>
+
+</section>
+

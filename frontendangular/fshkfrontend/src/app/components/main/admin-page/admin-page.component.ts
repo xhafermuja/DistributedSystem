@@ -14,7 +14,8 @@ import { Department } from '../../../model/department';
 })
 export class AdminPageComponent implements OnInit{
   public departments: Department[] = []; 
-  public editDepartment!: Department;
+  public editDepartment?: Department;
+  public departmentId?:Department;
 
   constructor(private departmentService:DepartmentService){}
 
@@ -26,7 +27,6 @@ export class AdminPageComponent implements OnInit{
     this.departmentService.getAllDepartments().subscribe(
       (response: Department[]) =>{
         this.departments= response;  
-        this.getDepartments();
       },
       (error: HttpErrorResponse) =>{
         alert(error.message);
@@ -38,7 +38,7 @@ export class AdminPageComponent implements OnInit{
     this.departmentService.addDepartment(addForm.value).subscribe(
       (response:Department) =>{
         console.log(response);
-
+        this.getDepartments();
       },
       (error:HttpErrorResponse) =>{
         alert(error.message)
@@ -46,16 +46,31 @@ export class AdminPageComponent implements OnInit{
     )
   }
 
-  public onUpdateDepartment(department:Department):void{
-    this.departmentService.updateDepartment(department).subscribe(
+  public onUpdateDepartment(department:any):void{
+    this.editDepartment=department;
+
+    this.departmentService.updateDepartment(this.editDepartment).subscribe(
       (response:Department) =>{
         console.log(response);
-
+        this.getDepartments();
       },
       (error:HttpErrorResponse) =>{
         alert(error.message)
       }
     )
+  }
+
+  public onDeleteDepartment(department:any):void{
+    this.departmentId=department;
+  this.departmentService.deleteDepartment(this.departmentId).subscribe(
+    (response:void) =>{
+      console.log(response);
+      this.getDepartments();
+    },
+    (error:HttpErrorResponse) =>{
+      alert(error.message)
+    }
+  )
   }
 
 }

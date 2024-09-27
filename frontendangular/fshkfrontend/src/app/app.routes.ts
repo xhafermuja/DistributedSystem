@@ -7,6 +7,7 @@ import { NotFoundPageComponent } from './components/main/not-found-page/not-foun
 import { KontaktPageComponent } from './components/main/kontakt-page/kontakt-page.component';
 import { LoginPageComponent } from './components/main/login-page/login-page.component';
 import { AdminPageComponent } from './components/main/admin-page/admin-page.component';
+import { RegisterPageComponent } from './components/main/register-page/register-page.component';
 
 export const routes: Routes = [
     { path: '', redirectTo:'index-page', pathMatch: 'full'},
@@ -17,5 +18,6 @@ export const routes: Routes = [
     { path: 'kontakt-page', component: KontaktPageComponent},
     { path: 'login-page', component: LoginPageComponent},
     { path: 'admin-page', component: AdminPageComponent},
+    { path: 'register-page', component: RegisterPageComponent},
     { path: '**', component: NotFoundPageComponent}
 ];

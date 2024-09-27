@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   providers:[DepartmentService]
 })
 export class DepartmentPageComponent implements OnInit{
-  public departments: Department[] = []; 
+  public departments: Department[]=[]; 
 
   constructor(private departmentService: DepartmentService){
   }
@@ -22,9 +22,8 @@ export class DepartmentPageComponent implements OnInit{
     this.getDepartments();
     
   }
-    public getDepartments():void{
+  public getDepartments(){
 
-      
       this.departmentService.getAllDepartments().subscribe(
         (response: Department[]) =>{
           this.departments= response;  
